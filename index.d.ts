@@ -7,12 +7,16 @@ export type JsonSchema =
   | NullJsonSchema
 
 export type JsonSchemaProperty =
+  | RefJsonSchemaProperty
   | StringJsonSchemaProperty
   | NumberJsonSchemaProperty
   | ObjectJsonSchemaProperty
   | ArrayJsonSchemaProperty
   | BooleanJsonSchemaProperty
   | NullJsonSchemaProperty
+  | AnyOfSchemaProperty
+  | AllOfSchemaProperty
+  | OneOfSchemaProperty
 
 export type JsonPropertiesTypes = 'string' | 'number' | 'object' | 'array' | 'boolean' | 'null'
 
@@ -26,6 +30,14 @@ interface BaseJsonSchema {
 
 interface BaseJsonSchemaProperty {
   description?: string
+}
+
+type AnyOfSchemaProperty = JsonSchemaProperty[]
+type AllOfSchemaProperty = JsonSchemaProperty[]
+type OneOfSchemaProperty = JsonSchemaProperty[]
+
+interface RefJsonSchemaProperty extends BaseJsonSchemaProperty {
+  $ref: string
 }
 
 interface StringJsonSchemaProperty extends BaseJsonSchemaProperty {
