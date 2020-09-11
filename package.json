@@ -1,0 +1,20 @@
+{
+  "name": "type-jsonschema",
+  "version": "0.0.2",
+  "description": "typescript type definition for json schema",
+  "scripts": {},
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/GiovanniCardamone/type-jsonschema.git"
+  },
+  "keywords": [
+    "typescript",
+    "jsonschema"
+  ],
+  "author": "Giovanni Cardamone <g.cardamone2@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/GiovanniCardamone/type-jsonschema/issues"
+  },
+  "homepage": "https://github.com/GiovanniCardamone/type-jsonschema#readme"
+}
