@@ -26,10 +26,12 @@ interface BaseJsonSchema {
   title?: string
   description?: string
   required?: string[]
+  [key: string]: any
 }
 
 interface BaseJsonSchemaProperty {
   description?: string
+  [key: string]: any
 }
 
 type AnyOfSchemaProperty = JsonSchemaProperty[]
@@ -98,9 +100,7 @@ interface ObjectJsonSchemaProperty extends BaseJsonSchemaProperty {
 interface ArrayJsonSchemaProperty extends BaseJsonSchemaProperty {
   type: 'array'
   items: JsonSchemaProperty | JsonSchemaProperty[]
-  contains?: {
-    type: JsonPropertiesTypes
-  }
+  contains?: JsonSchemaProperty
   minItems?: number
   maxItems?: number
   uniqueItems?: boolean
