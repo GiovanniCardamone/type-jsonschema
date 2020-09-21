@@ -1,4 +1,5 @@
 export type JsonSchema =
+  | RefJsonSchema
   | StringJsonSchema
   | NumberJsonSchema
   | ObjectJsonSchema
@@ -114,6 +115,7 @@ interface NullJsonSchemaProperty extends BaseJsonSchemaProperty {
   type: 'null'
 }
 
+type RefJsonSchema = BaseJsonSchema & RefJsonSchemaProperty
 type StringJsonSchema = BaseJsonSchema & StringJsonSchemaProperty
 type NumberJsonSchema = BaseJsonSchema & NumberJsonSchemaProperty
 type ObjectJsonSchema = BaseJsonSchema & ObjectJsonSchemaProperty
