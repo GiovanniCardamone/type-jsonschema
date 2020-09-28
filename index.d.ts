@@ -39,11 +39,11 @@ type AnyOfSchemaProperty = JsonSchemaProperty[]
 type AllOfSchemaProperty = JsonSchemaProperty[]
 type OneOfSchemaProperty = JsonSchemaProperty[]
 
-interface RefJsonSchemaProperty extends BaseJsonSchemaProperty {
+export interface RefJsonSchemaProperty extends BaseJsonSchemaProperty {
   $ref: string
 }
 
-interface StringJsonSchemaProperty extends BaseJsonSchemaProperty {
+export interface StringJsonSchemaProperty extends BaseJsonSchemaProperty {
   type: 'string'
   minLength?: number
   maxLength?: number
@@ -69,7 +69,7 @@ interface StringJsonSchemaProperty extends BaseJsonSchemaProperty {
     | 'string'
 }
 
-interface NumberJsonSchemaProperty extends BaseJsonSchemaProperty {
+export interface NumberJsonSchemaProperty extends BaseJsonSchemaProperty {
   type: 'number'
   multipleOf?: number
   minimum?: number
@@ -78,7 +78,7 @@ interface NumberJsonSchemaProperty extends BaseJsonSchemaProperty {
   exclusiveMaximum?: number
 }
 
-interface ObjectJsonSchemaProperty extends BaseJsonSchemaProperty {
+export interface ObjectJsonSchemaProperty extends BaseJsonSchemaProperty {
   type: 'object'
   properties: {
     [key: string]: JsonSchemaProperty
@@ -98,7 +98,7 @@ interface ObjectJsonSchemaProperty extends BaseJsonSchemaProperty {
   }
 }
 
-interface ArrayJsonSchemaProperty extends BaseJsonSchemaProperty {
+export interface ArrayJsonSchemaProperty extends BaseJsonSchemaProperty {
   type: 'array'
   items: JsonSchemaProperty | JsonSchemaProperty[]
   contains?: JsonSchemaProperty
@@ -107,18 +107,18 @@ interface ArrayJsonSchemaProperty extends BaseJsonSchemaProperty {
   uniqueItems?: boolean
 }
 
-interface BooleanJsonSchemaProperty extends BaseJsonSchemaProperty {
+export interface BooleanJsonSchemaProperty extends BaseJsonSchemaProperty {
   type: 'boolean'
 }
 
-interface NullJsonSchemaProperty extends BaseJsonSchemaProperty {
+export interface NullJsonSchemaProperty extends BaseJsonSchemaProperty {
   type: 'null'
 }
 
-type RefJsonSchema = BaseJsonSchema & RefJsonSchemaProperty
-type StringJsonSchema = BaseJsonSchema & StringJsonSchemaProperty
-type NumberJsonSchema = BaseJsonSchema & NumberJsonSchemaProperty
-type ObjectJsonSchema = BaseJsonSchema & ObjectJsonSchemaProperty
-type ArrayJsonSchema = BaseJsonSchema & ArrayJsonSchemaProperty
-type BooleanJsonSchema = BaseJsonSchema & BooleanJsonSchemaProperty
-type NullJsonSchema = BaseJsonSchema & NullJsonSchemaProperty
+export type RefJsonSchema = BaseJsonSchema & RefJsonSchemaProperty
+export type StringJsonSchema = BaseJsonSchema & StringJsonSchemaProperty
+export type NumberJsonSchema = BaseJsonSchema & NumberJsonSchemaProperty
+export type ObjectJsonSchema = BaseJsonSchema & ObjectJsonSchemaProperty
+export type ArrayJsonSchema = BaseJsonSchema & ArrayJsonSchemaProperty
+export type BooleanJsonSchema = BaseJsonSchema & BooleanJsonSchemaProperty
+export type NullJsonSchema = BaseJsonSchema & NullJsonSchemaProperty
