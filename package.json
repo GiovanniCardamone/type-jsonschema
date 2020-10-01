@@ -1,6 +1,6 @@
 {
   "name": "type-jsonschema",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "description": "typescript type definition for json schema",
   "scripts": {},
   "repository": {
