@@ -73,9 +73,9 @@ export interface NumberJsonSchemaProperty extends BaseJsonSchemaProperty {
   type: 'number'
   multipleOf?: number
   minimum?: number
-  exclusiveMinimum?: number
+  exclusiveMinimum?: boolean
   maximum?: number
-  exclusiveMaximum?: number
+  exclusiveMaximum?: boolean
 }
 
 export interface ObjectJsonSchemaProperty extends BaseJsonSchemaProperty {
