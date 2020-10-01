@@ -6,6 +6,7 @@ export type JsonSchema =
   | ArrayJsonSchema
   | BooleanJsonSchema
   | NullJsonSchema
+  | EnumJsonSchema
 
 export type JsonSchemaProperty =
   | RefJsonSchemaProperty
@@ -15,6 +16,7 @@ export type JsonSchemaProperty =
   | ArrayJsonSchemaProperty
   | BooleanJsonSchemaProperty
   | NullJsonSchemaProperty
+  | EnumJsonSchemaProperty
   | AnyOfSchemaProperty
   | AllOfSchemaProperty
   | OneOfSchemaProperty
@@ -115,6 +117,11 @@ export interface NullJsonSchemaProperty extends BaseJsonSchemaProperty {
   type: 'null'
 }
 
+export interface EnumJsonSchemaProperty extends BaseJsonSchema {
+  type: 'enum'
+  enum: string[]
+}
+
 export type RefJsonSchema = BaseJsonSchema & RefJsonSchemaProperty
 export type StringJsonSchema = BaseJsonSchema & StringJsonSchemaProperty
 export type NumberJsonSchema = BaseJsonSchema & NumberJsonSchemaProperty
@@ -122,3 +129,4 @@ export type ObjectJsonSchema = BaseJsonSchema & ObjectJsonSchemaProperty
 export type ArrayJsonSchema = BaseJsonSchema & ArrayJsonSchemaProperty
 export type BooleanJsonSchema = BaseJsonSchema & BooleanJsonSchemaProperty
 export type NullJsonSchema = BaseJsonSchema & NullJsonSchemaProperty
+export type EnumJsonSchema = BaseJsonSchema & EnumJsonSchemaProperty
